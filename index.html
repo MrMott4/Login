@@ -3,83 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login StageLog</title>
+  <title>StageLog – Login</title>
 
-  <!-- SDK do Google Identity Services -->
+  <!-- Script oficial da Google Identity -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-  <!-- Estilo da página -->
+  <!-- Estilo básico (você pode trocar por seu CSS externo) -->
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #eef2f3, #dff1ff);
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
+      padding: 50px;
     }
-
-    .container {
-      text-align: center;
-      padding: 40px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      width: 360px;
-    }
-
     h1 {
-      font-size: 26px;
-      color: #333;
-      margin-bottom: 30px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
-
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
       font-size: 14px;
-      color: #888;
     }
-
     footer a {
-      color: #3498db;
-      text-decoration: none;
       margin: 0 8px;
-    }
-
-    .g_id_signin {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      border-radius: 8px;
+      text-decoration: none;
+      color: #007bff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Seja bem-vindo, faça login com Google para continuar</h1>
 
-    <!-- Google Login SDK Configuração -->
-    <div id="g_id_onload"
-         data-client_id="837075911876-jkq3ig2lf66ul14gg9d43pmj4ni5oj97.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="redirect"
-         data-login_uri="https://fomulario-estagio.netlify.app/"
-         data-auto_prompt="false">
-    </div>
+  <h1>StageLog</h1>
+  <p>Faça login com sua conta Google para continuar</p>
 
-    <!-- Botão de Login com Google -->
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="pill"
-         data-theme="outline"
-         data-text="signin_with"
-         data-size="large"
-         data-logo_alignment="left">
-    </div>
-
-    <footer>
-      <a href="politica.html">Política de Privacidade</a> •
-      <a href="termos.html">Termos de Serviço</a>
-    </footer>
+  <!-- Botão de login que você enviou -->
+  <div id="g_id_onload"
+       data-client_id="837075911876-jkq3ig2lf66ul14gg9d43pmj4ni5oj97.apps.googleusercontent.com"
+       data-context="signin"
+       data-ux_mode="redirect"
+       data-login_uri="https://registro-estagio.vercel.com"
+       data-auto_prompt="false">
   </div>
+
+  <div class="g_id_signin"
+       data-type="standard"
+       data-shape="pill"
+       data-theme="filled_black"
+       data-text="signin_with"
+       data-size="large"
+       data-logo_alignment="left"
+       data-width="250">
+  </div>
+
+  <footer>
+    <a href="politica.html">Política de Privacidade</a> •
+    <a href="termos.html">Termos de Serviço</a>
+  </footer>
+
 </body>
 </html>
